@@ -1,0 +1,9 @@
+05:23:48 **** Incremental Build of configuration debug for project orginal2 ****
+make MODE=debug all 
+cd src && /usr/bin/make
+make[1]: Entering directory '/c/Users/Public/Documents/omnetpp-5.3/new2/orginal2/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/c/Users/Public/Documents/omnetpp-5.3/new2/orginal2/src'
+
+05:23:48 Build Finished (took 312ms)
+

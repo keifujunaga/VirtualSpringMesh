@@ -1,0 +1,9 @@
+13:14:52 **** Incremental Build of configuration release for project orginal ****
+make MODE=release all 
+Creating executable: out/clang-release//orginal.exe
+C:\Users\Public\Documents\omnetpp-5.3\tools\win64\mingw64\bin\ld: cannot find -lINET
+clang++.exe: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [Makefile:115: out/clang-release//orginal.exe] Error 1
+
+13:14:52 Build Finished (took 617ms)
+

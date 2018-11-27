@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\kei fukunaga\Desktop\inetmanet-3.0"/>
+			<item value="C:\Users\kei fukunaga\Desktop\inetmanet-3.x-inetmanet-3.5"/>
+			<item value="C:\Users\Public\Documents\inetmanet-inetmanet-2.2"/>
+			<item value="C:\Users\kei fukunaga\Desktop\inetmanet-integration"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.omnetpp.cdt.wizards.NewOmnetppCCProject" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.omnetpp.wizards"/>
+		</list>
+	</section>
+</section>

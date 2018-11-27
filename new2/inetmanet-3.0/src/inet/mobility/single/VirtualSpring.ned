@@ -1,0 +1,47 @@
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Lesser General Public License for more details.
+// 
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program.  If not, see http://www.gnu.org/licenses/.
+// 
+
+package inet.mobility.single;
+
+import inet.mobility.base.MovingMobilityBase;
+
+//
+// Uses a Gauss-Markov model to control the randomness in the movement.
+// Totally random walk (Brownian motion) is obtained by setting alpha=0,
+// while alpha=1 results a linear motion.
+//
+simple VirtualSpring extends MovingMobilityBase
+{
+    parameters:
+        volatile double speed @unit(mps) = default(mps);
+        double angle @unit(deg) = default(uniform(0deg, 360deg));
+        volatile double waitTime @unit(s) = default(0s);
+        double cRange;
+        int numHost;
+        int nodeNum;
+        double lo;
+        double kAtA;
+       	double initialX @unit(m); 
+       	double initialY @unit(m);
+       	double initialZ @unit(m);
+       	double travelTime;
+    	double frequency;
+    	double propagationSpeed;
+    	int division;
+    	double dbm;
+    	double lbreq;
+    	int TSCOUT;
+        @class(VirtualSpring);
+}

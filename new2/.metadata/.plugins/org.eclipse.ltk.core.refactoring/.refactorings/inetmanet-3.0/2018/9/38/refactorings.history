@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;inetmanet-3.0/examples/mobility/mobilehost.cc&apos; to &apos;mobilenode.cc&apos;" description="Rename resource &apos;mobilehost.cc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="examples/mobility/mobilehost.cc" name="mobilenode.cc" stamp="1537261778249" updateReferences="true"/>
+</session>

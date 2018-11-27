@@ -1,0 +1,6 @@
+15:11:53 **** Build of configuration release for project org ****
+make MODE=release all 
+Creating executable: out/clang-release//org.exe
+
+15:11:54 Build Finished (took 921ms)
+

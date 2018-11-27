@@ -1,0 +1,504 @@
+[General]
+#scheduler-class = "inet::cRealTimeScheduler" #so that speed appears realistic
+#debug-on-errors = true
+tkenv-plugin-path = ../../../etc/plugins
+sim-time-limit = 10day
+
+*.numHosts = 2
+**.constraintAreaMinX = 0m
+**.constraintAreaMinY = 0m
+**.constraintAreaMinZ = 0m
+**.constraintAreaMaxX = 600m
+**.constraintAreaMaxY = 400m
+**.constraintAreaMaxZ = 50m
+**.updateInterval = 0.1s # test with 0s too, and let getCurrentPosition update the display string from a test module
+
+**.mobility.initFromDisplayString = false
+
+
+# à»â∫ÅAïtÇØÇΩÇµ
+#--------------------------------------------------------------------------------
+#Two hosts communicating wirelessly
+#[Config Test]
+
+[Config ManetA]
+network = ManetA
+*.numNodes = 5
+
+**.mnode*.mobilityType = "RandomWPMobility"
+**.mnode*.mobility.initFromDisplayString = false
+**.mnode[0].mobility.speed = 10*uniform(20mps,50mps)
+**.mnode*.mobility.speed = uniform(20mps,50mps)
+**.mnode*.mobility.waitTime = uniform(3s,8s)
+
+[Config VirtualSpring]
+network = MobileNetworkWithScenario
+*.numHosts = 15
+**.host[0..4].mobilityType = "VirtualSpring"
+**.host[0..4].mobility.speed = 0mps
+**.host[0..4].mobility.angle = 0deg
+**.host[0..4].mobility.cRange = 200
+**.host[0..4].mobility.numHost = 5
+**.host[0..4].mobility.lo = 100
+**.host[0..4].mobility.kAtA = 10
+**.host[0..4].mobility.waitTime = 1s
+**.host[0..4].mobility.travelTime = 1
+**.host[0..4].mobility.division = 2
+**.host[0..4].mobility.frequency = 2400000000
+**.host[0..4].mobility.propagationSpeed = 300000000
+**.host[0..4].mobility.dbm = 30  # 1mW = 0dBm 10mW = 10dBm 100mW = 20dBm 1W = 30dBm
+**.host[0..4].mobility.lbreq = -67 # -30dBm:perfect -67dBm:great VoIP, VoWiFi, VideoStreaming
+							  # -70dBm:soso E-mail web -80dBm:not good -90dBm:can't use
+**.host[0].mobility.nodeNum = 0
+**.host[1].mobility.nodeNum = 1
+**.host[2].mobility.nodeNum = 2
+**.host[3].mobility.nodeNum = 3
+**.host[4].mobility.nodeNum = 4
+
+**.host[0].mobility.initialX = ${x=60}m
+**.host[0].mobility.initialY = ${y=40}m
+**.host[0].mobility.initialZ = ${z=25}m
+
+**.host[1].mobility.initialX = ${2*$x}m
+**.host[1].mobility.initialY = ${2*$y}m
+**.host[1].mobility.initialZ = ${$z}m
+
+**.host[2].mobility.initialX = ${3*$x}m
+**.host[2].mobility.initialY = ${3*$y}m
+**.host[2].mobility.initialZ = ${$z}m
+
+**.host[3].mobility.initialX = ${4*$x}m
+**.host[3].mobility.initialY = ${4*$y}m
+**.host[3].mobility.initialZ = ${$z}m
+
+**.host[4].mobility.initialX = ${5*$x}m
+**.host[4].mobility.initialY = ${5*$y}m
+**.host[4].mobility.initialZ = ${$z}m
+
+#*.numHosts = 3
+**.host[5..14].mobilityType = "StationaryMobility"
+# place it at a fixed position:
+**.host[5].mobility.initialX = 50m
+**.host[5].mobility.initialY = 200m
+#**.host[5].mobility.initFromDisplayString = false
+# the second node is using the display string position (or placed randomly if position is not present in display string)
+#**.host[5].mobility.initFromDisplayString = true
+# place it at a random position:
+#**.host[5].mobility.initFromDisplayString = false
+
+
+[Config VirtualSpringplusNetwork]
+#network = MobileNetworkWithScenario
+network = MobileNetwork
+*.host*.networkLayer.arpType = "GlobalARP"
+
+*.host[5].numUdpApps = 1
+*.host[5].udpApp[0].typename = "UDPBasicApp"
+*.host[5].udpApp[0].destAddresses = "host[6]" #Ç±Ç±Ç≈ÅAà∂êÊÇåàÇﬂÇƒÇ¢ÇÈ
+*.host[5].udpApp[0].destPort = 5000
+*.host[5].udpApp[0].messageLength = 1000B
+*.host[5].udpApp[0].sendInterval = exponential(12ms)
+*.host[5].udpApp[0].packetName = "UDPData"
+
+*.host[6].numUdpApps = 1
+*.host[6].udpApp[0].typename = "UDPSink"
+*.host[6].udpApp[0].localPort = 5000
+
+*.host*.wlan[0].mac.fullDuplex = true
+*.host*.wlan[0].radio.transmitter.communicationRange = 250m
+
+
+*.host*.wlan[0].radio.displayCommunicationRange = true
+
+
+*.host*.**.bitrate = 1Mbps
+
+#--------------------------------------------------------------------------------
+#Setting up some animations
+
+#*.host[0].wlan[0].radio.displayCommunicationRange = true
+*.visualizer.sceneVisualizer.descriptionFigure = "title"
+*.visualizer.mediumVisualizer.displaySignals = true
+*.visualizer.physicalLinkVisualizer.displayLinks = true
+*.visualizer.physicalLinkVisualizer.packetFilter = "UDPData*"
+
+
+#Adding more nodes and decreasing the communication range
+
+#Setting up static routing
+*.host*.forwarding = true
+*.configurator.config = xml("<config><interface hosts='**' address='10.0.0.x' netmask='255.255.255.0'/><autoroute metric='errorRate'/></config>")
+*.configurator.optimizeRoutes = false
+*.host*.routingTable.netmaskRoutes = ""
+*.visualizer.dataLinkVisualizer.displayLinks = true
+*.visualizer.networkRouteVisualizer.displayRoutes = true
+*.visualizer.*LinkVisualizer.lineShift = 0
+*.visualizer.networkRouteVisualizer.lineShift = 0
+*.visualizer.networkRouteVisualizer.packetFilter = "UDPData*"
+
+#Taking interference into account
+*.host*.wlan[0].radio.receiver.ignoreInterference = false
+*.host*.wlan[0].radio.transmitter.interferenceRange = 500m
+*.host*.wlan[0].radio.displayInterferenceRange = true
+#*.visualizer.dataLinkVisualizer.packetFilter = ""
+
+#Using CSMA to better utilize the medium
+*.host*.wlan[0].typename = "WirelessNic"
+*.host*.wlan[0].radioType = "IdealRadio"
+*.host*.wlan[0].macType = "CsmaCaMac"
+
+#Turning on ACKs in CSMA
+*.host*.wlan[0].mac.useAck = false
+
+#Configuring node movements
+*.host*.wlan[0].mac.maxQueueSize = 10
+
+#Configureing ad-hoc routing (AODV)
+*.configurator.addStaticRoutes = false
+*.hostType = "AODVRouter"
+*.visualizer.dataLinkVisualizer.packetFilter = "AODV*"
+
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#*.numHosts = 5
+#**.host*.mobilityType = "StationaryMobility"
+#**.host[0].mobility.initialX = 50m
+#**.host[0].mobility.initialY = 200m
+
+#**.host*.mobilityType = "VirtualSpring"
+#**.host*.mobility.speed = 100mps
+#**.host*.mobility.angle = 0deg
+#**.host*.mobility.cRange = 100
+#**.host*.mobility.numHost = 5
+#**.host*.mobility.lo = 50
+#**.host*.mobility.waitTime = 3s
+#**.host[0].mobility.nodeNum = 0
+#**.host[1].mobility.nodeNum = 1
+#**.host[2].mobility.nodeNum = 2
+#**.host[3].mobility.nodeNum = 3
+#**.host[4].mobility.nodeNum = 4
+
+*.numHosts = 7
+**.host[0..4].mobilityType = "VirtualSpring"
+**.host[0..4].mobility.speed = 0mps
+**.host[0..4].mobility.angle = 0deg
+**.host[0..4].mobility.cRange = 200
+**.host[0..4].mobility.numHost = 5
+**.host[0..4].mobility.lo = 100
+**.host[0..4].mobility.kAtA = 20
+**.host[0..4].mobility.waitTime = 1s
+**.host[0..4].mobility.travelTime = 1
+**.host[0..4].mobility.division = 2
+**.host[0..4].mobility.frequency = 2400000000
+**.host[0..4].mobility.propagationSpeed = 300000000
+**.host[0..4].mobility.dbm = 30  # 1mW = 0dBm 10mW = 10dBm 100mW = 20dBm 1W = 30dBm
+**.host[0..4].mobility.lbreq = -67 # -30dBm:perfect -67dBm:great VoIP, VoWiFi, VideoStreaming
+							  # -70dBm:soso E-mail web -80dBm:not good -90dBm:can't use
+**.host[0].mobility.nodeNum = 0
+**.host[1].mobility.nodeNum = 1
+**.host[2].mobility.nodeNum = 2
+**.host[3].mobility.nodeNum = 3
+**.host[4].mobility.nodeNum = 4
+
+**.host[0].mobility.initialX = ${x=60}m
+**.host[0].mobility.initialY = ${y=40}m
+**.host[0].mobility.initialZ = ${z=25}m
+
+**.host[1].mobility.initialX = ${2*$x}m
+**.host[1].mobility.initialY = ${2*$y}m
+**.host[1].mobility.initialZ = ${$z}m
+
+**.host[2].mobility.initialX = ${3*$x}m
+**.host[2].mobility.initialY = ${3*$y}m
+**.host[2].mobility.initialZ = ${$z}m
+
+**.host[3].mobility.initialX = ${4*$x}m
+**.host[3].mobility.initialY = ${4*$y}m
+**.host[3].mobility.initialZ = ${$z}m
+
+**.host[4].mobility.initialX = ${5*$x}m
+**.host[4].mobility.initialY = ${5*$y}m
+**.host[4].mobility.initialZ = ${$z}m
+
+#*.numHosts = 3
+**.host[5..6].mobilityType = "StationaryMobility"
+# place it at a fixed position:
+**.host[5].mobility.initialX = 50m
+**.host[5].mobility.initialY = 200m
+#--------------------------------------------------------------------------
+[Config ANSimMobility]
+network = MobileNetworkWithScenario
+**.host*.mobilityType = "ANSimMobility"
+**.host*.mobility.ansimTrace = xmldoc("ansimtrace.xml")
+**.host*.mobility.nodeId = -1  #means "host module's index"
+
+[Config BonnMotionMobility1]
+network = MobileNetworkWithScenario
+description = "2 hosts"
+**.host*.mobilityType = "BonnMotionMobility"
+**.host*.mobility.traceFile = "bonnmotion_small.movements"
+**.host*.mobility.nodeId = -1  #means "host module's index"
+
+[Config BonnMotionMobility2]
+network = MobileNetworkWithScenario
+description = "100 hosts"
+*.numHosts = 100
+**.host*.mobilityType = "BonnMotionMobility"
+**.host*.mobility.traceFile = "bonnmotion_scenario.movements"
+**.host*.mobility.nodeId = -1  #means "host module's index"
+
+[Config ChiangMobility]
+network = MobileNetworkWithScenario
+*.numHosts = 1
+**.host*.mobilityType = "ChiangMobility"
+**.host*.mobility.stateTransitionUpdateInterval = 3s
+**.host*.mobility.speed = 10mps
+
+[Config CircleMobility1]
+network = MobileNetworkWithScenario
+*.numHosts = 3
+**.host*.mobilityType = "CircleMobility"
+**.host*.mobility.cx = 200m
+**.host*.mobility.cy = 200m
+**.host*.mobility.r = 150m
+**.host*.mobility.speed = 40mps
+**.host[0].mobility.startAngle = 0deg
+**.host[1].mobility.startAngle = 120deg
+**.host[2].mobility.startAngle = 240deg
+
+[Config CircleMobility2]
+network = MobileNetworkWithScenario
+*.numHosts = 3
+**.host*.mobilityType = "CircleMobility"
+**.host[0].mobility.cx = 100m
+**.host[1].mobility.cx = 300m
+**.host[2].mobility.cx = 500m
+**.host*.mobility.cy = 200m
+**.host*.mobility.r = 150m
+**.host*.mobility.speed = 40mps
+**.host*.mobility.startAngle = 0deg
+
+[Config ConstSpeedMobility]
+network = MobileNetworkWithScenario
+**.host*.mobilityType = "ConstSpeedMobility"
+**.host*.mobility.initFromDisplayString = false
+**.host*.mobility.speed = 50mps
+
+[Config ConstSpeedMobility01]
+extends = ConstSpeedMobility
+**.updateInterval = 0.1s
+
+[Config ConstSpeedMobility1]
+extends = ConstSpeedMobility
+**.updateInterval = 1s
+
+[Config ConstSpeedMobility10]
+extends = ConstSpeedMobility
+**.updateInterval = 10s
+
+[Config ConstSpeedMobility100]
+extends = ConstSpeedMobility
+**.updateInterval = 100s
+
+[Config ConstSpeedMobility1000]
+extends = ConstSpeedMobility
+**.updateInterval = 1000s
+
+[Config GaussMarkovMobility]
+network = MobileNetworkWithScenario
+*.numHosts = 5
+**.host*.mobilityType = "GaussMarkovMobility"
+**.host*.mobility.alpha = 0.9
+**.host*.mobility.speed = 10mps
+**.host*.mobility.angle = 0deg
+**.host*.mobility.variance = 40
+**.host*.mobility.margin = 30m
+
+[Config LinearMobility]
+network = MobileNetworkWithScenario
+**.host*.mobilityType = "LinearMobility"
+**.host*.mobility.initFromDisplayString = false
+**.host*.mobility.speed = 50mps
+**.host*.mobility.angle = 30deg  # degrees
+#**.host*.mobility.acceleration = -0.5
+
+[Config LinearMobility01]
+extends = LinearMobility
+**.updateInterval = 0.1s
+
+[Config LinearMobility1]
+extends = LinearMobility
+**.updateInterval = 1s
+
+[Config LinearMobility10]
+extends = LinearMobility
+**.updateInterval = 10s
+
+[Config LinearMobility100]
+extends = LinearMobility
+**.updateInterval = 100s
+
+[Config LinearMobility1000]
+extends = LinearMobility
+**.updateInterval = 1000s
+
+[Config LinearMobility_accdown]
+extends = LinearMobility
+**.updateInterval = 0.1s
+**.host*.mobility.acceleration = -1.0  # m/s2
+
+[Config LinearMobility_accup]
+extends = LinearMobility
+**.updateInterval = 0.1s
+**.host*.mobility.speed = 0mps
+**.host*.mobility.acceleration = 1.0  # m/s2
+
+[Config MassMobility]
+network = MobileNetworkWithScenario
+*.numHosts = 5
+**.host*.mobilityType = "MassMobility"
+**.host*.mobility.initFromDisplayString = false
+**.host*.mobility.changeInterval = truncnormal(2s, 0.5s)
+**.host*.mobility.changeAngleBy = normal(0deg, 30deg)
+**.host*.mobility.speed = truncnormal(15mps, 5mps)
+
+[Config MassMobilityWithScenario]
+network = MobileNetworkWithScenario
+*.numHosts = 5
+**.host*.mobilityType = "MassMobility"
+**.host*.mobility.initFromDisplayString = false
+**.host*.mobility.changeInterval = truncnormal(2s, 0.5s)
+**.host*.mobility.changeAngleBy = normal(0deg, 30deg)
+**.host*.mobility.speed = truncnormal(15mps, 5mps)
+**.scenarioManager.script = xmldoc("scenario.xml")
+
+[Config MoBANMobility1]
+network = MoBANNetwork
+**.constraintAreaMaxX = 1000m
+**.constraintAreaMaxY = 1000m
+**.constraintAreaMaxZ = 1000m
+**.numNodes = 12
+**.numMoBAN = 1
+
+**.coordinator[*].postureSpecFile = xmldoc("postures1.xml")
+**.coordinator[*].configFile = xmldoc("configMoBAN1.xml")
+**.coordinator[*].useMobilityPattern = false
+**.coordinator[0].mobilityPatternFile = "MoBAN_Pattern_in0.txt"
+
+**.node[*].mobilityType = "MoBANLocal"
+**.node[*].mobility.coordinatorIndex = 0
+
+[Config MoBANMobility2]
+network = MoBANNetwork
+**.constraintAreaMaxX = 1000m
+**.constraintAreaMaxY = 1000m
+**.constraintAreaMaxZ = 1000m
+**.numNodes = 24
+**.numMoBAN = 2
+
+**.coordinator[*].postureSpecFile = xmldoc("postures1.xml")
+**.coordinator[*].configFile = xmldoc("configMoBAN2.xml")
+**.coordinator[*].useMobilityPattern = false
+**.coordinator[*].mobilityPatternFile = ""
+
+**.node[*].mobilityType = "MoBANLocal"
+**.node[0..11].mobility.coordinatorIndex = 0
+**.node[12..23].mobility.coordinatorIndex = 1
+
+[Config RandomWPMobility]
+network = MobileNetworkWithScenario
+*.numHosts = 5
+**.host*.mobilityType = "RandomWPMobility"
+**.host*.mobility.initFromDisplayString = false
+**.host[0].mobility.speed = 10*uniform(20mps,50mps)
+**.host*.mobility.speed = uniform(20mps,50mps)
+**.host*.mobility.waitTime = uniform(3s,8s)
+
+[Config RectangleMobility]
+network = MobileNetworkWithScenario
+**.host*.mobilityType = "RectangleMobility"
+**.host*.mobility.constraintAreaMinX = 100m
+**.host*.mobility.constraintAreaMinY = 100m
+**.host*.mobility.constraintAreaMaxX = 500m
+**.host*.mobility.constraintAreaMaxY = 300m
+#**.host*.mobility.x1 = 100
+#**.host*.mobility.y1 = 100
+#**.host*.mobility.x2 = 500
+#**.host*.mobility.y2 = 300
+**.host[0].mobility.startPos = 0
+**.host[1].mobility.startPos = 2.5
+**.host[0].mobility.speed = 20mps
+**.host[1].mobility.speed = -10mps
+
+[Config StaticGridMobility]
+network = MobileNetworkWithScenario
+*.numHosts = 20
+**.host*.mobilityType = "StaticGridMobility"
+**.host*.mobility.marginX = 100m
+**.host*.mobility.marginY = 100m
+**.host*.mobility.numHosts = 20
+
+[Config StationaryMobility]
+network = MobileNetworkWithScenario
+*.numHosts = 3
+**.host*.mobilityType = "StationaryMobility"
+# place it at a fixed position:
+**.host[0].mobility.initialX = 50m
+**.host[0].mobility.initialY = 200m
+**.host[0].mobility.initFromDisplayString = false
+# the second node is using the display string position (or placed randomly if position is not present in display string)
+**.host[1].mobility.initFromDisplayString = true
+# place it at a random position:
+**.host[2].mobility.initFromDisplayString = false
+
+[Config TractorMobility]
+network = MobileNetworkWithScenario
+*.numHosts = 1
+**.host*.mobilityType = "TractorMobility"
+**.host*.mobility.x1 = 100m
+**.host*.mobility.y1 = 100m
+**.host*.mobility.x2 = 500m
+**.host*.mobility.y2 = 300m
+**.host*.mobility.rowCount = 4
+**.host*.mobility.speed = 50mps
+
+[Config TurtleMobility1]
+network = MobileNetworkWithScenario
+description = "square"
+*.numHosts = 1
+**.host*.mobilityType = "TurtleMobility"
+**.host*.mobility.turtleScript = xmldoc("turtle.xml", "movements//movement[@id='1']")
+
+[Config TurtleMobility2]
+network = MobileNetworkWithScenario
+description = "two squares"
+*.numHosts = 1
+**.host*.mobilityType = "TurtleMobility"
+**.host*.mobility.turtleScript = xmldoc("turtle.xml", "movements//movement[@id='2']")
+
+[Config TurtleMobility3]
+network = MobileNetworkWithScenario
+description = "random waypoint"
+*.numHosts = 2
+**.host*.mobilityType = "TurtleMobility"
+**.host*.mobility.turtleScript = xmldoc("turtle.xml", "movements//movement[@id='3']")
+
+[Config TurtleMobility4]
+network = MobileNetworkWithScenario
+description = "mass+reflect"
+*.numHosts = 2
+**.host*.mobilityType = "TurtleMobility"
+**.host*.mobility.turtleScript = xmldoc("turtle.xml", "movements//movement[@id='4']")
+
+[Config TurtleMobility5]
+network = MobileNetworkWithScenario
+description = "mass+wrap"
+*.numHosts = 2
+**.host*.mobilityType = "TurtleMobility"
+**.host*.mobility.turtleScript = xmldoc("turtle.xml", "movements//movement[@id='5']")
+
+[Config TurtleMobility6]
+network = MobileNetworkWithScenario
+description = "mass+placerandomly"
+*.numHosts = 2
+**.host*.mobilityType = "TurtleMobility"
+**.host*.mobility.turtleScript = xmldoc("turtle.xml", "movements//movement[@id='6']")

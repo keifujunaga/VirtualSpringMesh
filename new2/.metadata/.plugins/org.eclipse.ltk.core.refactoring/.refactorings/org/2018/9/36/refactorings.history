@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;org/test/mobility/virtualspring.cc&apos; to &apos;mobilehost.cc&apos;" description="Rename resource &apos;virtualspring.cc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="test/mobility/virtualspring.cc" name="mobilehost.cc" stamp="1536149288546" updateReferences="true"/>
+</session>

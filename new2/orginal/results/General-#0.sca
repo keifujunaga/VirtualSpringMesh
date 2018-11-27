@@ -1,0 +1,4787 @@
+version 2
+run General-0-20180816-14:18:45-1788
+attr configname General
+attr datetime 20180816-14:18:45
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network org
+attr processid 1788
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.numHosts 16
+param **.mobileHost[*].mobilityType "\"StaticGridMobility\""
+param **.mobileHost[*].mobility.numHosts 16
+param **.mobileHost[*].mobility.marginX 50m
+param **.mobileHost[*].mobility.marginY 50m
+param **.wlan[*].bitrate 54Mbps
+param **.mac.maxQueueSize 15
+param **.radio.sensitivity -85dBm
+param **.radio.transmitterPower 2mW
+param **.mobileHost[0].numPingApps 1
+param **.mobileHost[0].pingApp[0].destAddr "\"10.0.0.31\""
+param **.mobileHost[0].pingApp[0].startTime 0s
+param **.pingApp[*].printPing true
+param **.mobileHost[*].routingProtocol "\"OLSR_ETX\""
+param **.networkConfigurator.config "xml(\"<config><interface hosts='*' address='10.0.0.x' netmask='255.255.255.0'/></config>\")"
+param **.constraintAreaMinX 0m
+param **.constraintAreaMinY 0m
+param **.constraintAreaMaxX 800m
+param **.constraintAreaMaxY 800m
+
+scalar org.mobileHost[0].mobility x 137.5
+scalar org.mobileHost[0].mobility y 137.5
+scalar org.mobileHost[0].mobility z 0
+scalar org.mobileHost[1].mobility x 312.5
+scalar org.mobileHost[1].mobility y 137.5
+scalar org.mobileHost[1].mobility z 0
+scalar org.mobileHost[2].mobility x 487.5
+scalar org.mobileHost[2].mobility y 137.5
+scalar org.mobileHost[2].mobility z 0
+scalar org.mobileHost[3].mobility x 662.5
+scalar org.mobileHost[3].mobility y 137.5
+scalar org.mobileHost[3].mobility z 0
+scalar org.mobileHost[4].mobility x 137.5
+scalar org.mobileHost[4].mobility y 312.5
+scalar org.mobileHost[4].mobility z 0
+scalar org.mobileHost[5].mobility x 312.5
+scalar org.mobileHost[5].mobility y 312.5
+scalar org.mobileHost[5].mobility z 0
+scalar org.mobileHost[6].mobility x 487.5
+scalar org.mobileHost[6].mobility y 312.5
+scalar org.mobileHost[6].mobility z 0
+scalar org.mobileHost[7].mobility x 662.5
+scalar org.mobileHost[7].mobility y 312.5
+scalar org.mobileHost[7].mobility z 0
+scalar org.mobileHost[8].mobility x 137.5
+scalar org.mobileHost[8].mobility y 487.5
+scalar org.mobileHost[8].mobility z 0
+scalar org.mobileHost[9].mobility x 312.5
+scalar org.mobileHost[9].mobility y 487.5
+scalar org.mobileHost[9].mobility z 0
+scalar org.mobileHost[10].mobility x 487.5
+scalar org.mobileHost[10].mobility y 487.5
+scalar org.mobileHost[10].mobility z 0
+scalar org.mobileHost[11].mobility x 662.5
+scalar org.mobileHost[11].mobility y 487.5
+scalar org.mobileHost[11].mobility z 0
+scalar org.mobileHost[12].mobility x 137.5
+scalar org.mobileHost[12].mobility y 662.5
+scalar org.mobileHost[12].mobility z 0
+scalar org.mobileHost[13].mobility x 312.5
+scalar org.mobileHost[13].mobility y 662.5
+scalar org.mobileHost[13].mobility z 0
+scalar org.mobileHost[14].mobility x 487.5
+scalar org.mobileHost[14].mobility y 662.5
+scalar org.mobileHost[14].mobility z 0
+scalar org.mobileHost[15].mobility x 662.5
+scalar org.mobileHost[15].mobility y 662.5
+scalar org.mobileHost[15].mobility z 0
+scalar org.radioMedium.propagation "Arrival computation count" 45
+scalar org.radioMedium "transmission count" 3
+scalar org.radioMedium "radio frame send count" 45
+scalar org.radioMedium "reception computation count" 30
+scalar org.radioMedium "interference computation count" 108
+scalar org.radioMedium "reception decision computation count" 30
+scalar org.radioMedium "listening decision computation count" 48
+scalar org.radioMedium "reception cache hit" 85.714285714286
+attr unit %
+scalar org.radioMedium "interference cache hit" 66.666666666667
+attr unit %
+scalar org.radioMedium "noise cache hit" 0
+attr unit %
+scalar org.radioMedium "snir cache hit" 50
+attr unit %
+scalar org.radioMedium "reception decision cache hit" 50
+attr unit %
+scalar org.radioMedium "reception result cache hit" 0
+attr unit %
+scalar org.mobileHost[0].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar org.mobileHost[0].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar org.mobileHost[0].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar org.mobileHost[0].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar org.mobileHost[0].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar org.mobileHost[0].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar org.mobileHost[0].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar org.mobileHost[0].lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[0].lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[0].lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[0].lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[0].wlan[0].mac.statistics numReceivedUnicast 0
+scalar org.mobileHost[0].wlan[0].mac.statistics numReceivedBroadcast 0
+scalar org.mobileHost[0].wlan[0].mac.statistics numReceivedMulticast 0
+scalar org.mobileHost[0].wlan[0].mac.statistics numReceivedNotForUs 0
+scalar org.mobileHost[0].wlan[0].mac.statistics numReceivedErroneous 0
+scalar org.mobileHost[0].wlan[0].mac rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[0].wlan[0].mac rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[0].wlan[0].mac passedUpPk:count 2
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[0].wlan[0].mac passedUpPk:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[0].wlan[0].mac rcvdPkFromLL:count 2
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar org.mobileHost[0].wlan[0].mac rcvdPkFromLL:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar org.mobileHost[0].wlan[0].mac sentDownPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar org.mobileHost[0].wlan[0].mac sentDownPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+statistic org.mobileHost[0].wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[0].wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[0].wlan[0].radio packetErrorRate:histogram
+field count 2
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	2
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic org.mobileHost[0].wlan[0].radio minSNIR:histogram
+field count 2
+field mean 638.8824659931
+field stddev 0
+field min 638.8824659931
+field max 638.8824659931
+field sum 1277.7649319862
+field sqrsum 816341.61070684
+attr source minSNIR
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	638.38	0
+bin	638.4	0
+bin	638.42	0
+bin	638.44	0
+bin	638.46	0
+bin	638.48	0
+bin	638.5	0
+bin	638.52	0
+bin	638.54	0
+bin	638.56	0
+bin	638.58	0
+bin	638.6	0
+bin	638.62	0
+bin	638.64	0
+bin	638.66	0
+bin	638.68	0
+bin	638.7	0
+bin	638.72	0
+bin	638.74	0
+bin	638.76	0
+bin	638.78	0
+bin	638.8	0
+bin	638.82	0
+bin	638.84	0
+bin	638.86	0
+bin	638.88	2
+bin	638.9	0
+bin	638.92	0
+bin	638.94	0
+bin	638.96	0
+bin	638.98	0
+bin	639	0
+bin	639.02	0
+bin	639.04	0
+bin	639.06	0
+bin	639.08	0
+bin	639.1	0
+bin	639.12	0
+bin	639.14	0
+bin	639.16	0
+bin	639.18	0
+bin	639.2	0
+bin	639.22	0
+bin	639.24	0
+bin	639.26	0
+bin	639.28	0
+bin	639.3	0
+bin	639.32	0
+bin	639.34	0
+bin	639.36	0
+bin	639.38	0
+bin	639.4	0
+scalar org.mobileHost[0].wlan[0].radio transmissionState:count 0
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar org.mobileHost[0].wlan[0].radio receptionState:count 5
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar org.mobileHost[0].wlan[0].radio radioMode:count 2
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+statistic org.mobileHost[0].wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar org.mobileHost[0].pingApp[0] "Pings sent" 3
+scalar org.mobileHost[0].pingApp[0] "ping loss rate (%)" 100
+scalar org.mobileHost[0].pingApp[0] "ping out-of-order rate (%)" 0
+scalar org.mobileHost[0].pingApp[0] pingRxSeq:count 0
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar org.mobileHost[0].pingApp[0] pingTxSeq:count 3
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar org.mobileHost[0].pingApp[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar org.mobileHost[0].pingApp[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+statistic org.mobileHost[0].pingApp[0] rtt:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "ping round-trip time, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar org.mobileHost[1].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar org.mobileHost[1].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar org.mobileHost[1].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar org.mobileHost[1].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar org.mobileHost[1].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar org.mobileHost[1].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar org.mobileHost[1].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar org.mobileHost[1].lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[1].lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[1].lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[1].lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[1].wlan[0].mac.statistics numReceivedUnicast 0
+scalar org.mobileHost[1].wlan[0].mac.statistics numReceivedBroadcast 0
+scalar org.mobileHost[1].wlan[0].mac.statistics numReceivedMulticast 0
+scalar org.mobileHost[1].wlan[0].mac.statistics numReceivedNotForUs 0
+scalar org.mobileHost[1].wlan[0].mac.statistics numReceivedErroneous 0
+scalar org.mobileHost[1].wlan[0].mac rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[1].wlan[0].mac rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[1].wlan[0].mac passedUpPk:count 2
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[1].wlan[0].mac passedUpPk:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[1].wlan[0].mac rcvdPkFromLL:count 2
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar org.mobileHost[1].wlan[0].mac rcvdPkFromLL:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar org.mobileHost[1].wlan[0].mac sentDownPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar org.mobileHost[1].wlan[0].mac sentDownPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+statistic org.mobileHost[1].wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[1].wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[1].wlan[0].radio packetErrorRate:histogram
+field count 2
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	2
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic org.mobileHost[1].wlan[0].radio minSNIR:histogram
+field count 2
+field mean 709.869406659
+field stddev 0
+field min 709.869406659
+field max 709.869406659
+field sum 1419.738813318
+field sqrsum 1007829.1490208
+attr source minSNIR
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	709.36	0
+bin	709.38	0
+bin	709.4	0
+bin	709.42	0
+bin	709.44	0
+bin	709.46	0
+bin	709.48	0
+bin	709.5	0
+bin	709.52	0
+bin	709.54	0
+bin	709.56	0
+bin	709.58	0
+bin	709.6	0
+bin	709.62	0
+bin	709.64	0
+bin	709.66	0
+bin	709.68	0
+bin	709.7	0
+bin	709.72	0
+bin	709.74	0
+bin	709.76	0
+bin	709.78	0
+bin	709.8	0
+bin	709.82	0
+bin	709.84	0
+bin	709.86	2
+bin	709.88	0
+bin	709.9	0
+bin	709.92	0
+bin	709.94	0
+bin	709.96	0
+bin	709.98	0
+bin	710	0
+bin	710.02	0
+bin	710.04	0
+bin	710.06	0
+bin	710.08	0
+bin	710.1	0
+bin	710.12	0
+bin	710.14	0
+bin	710.16	0
+bin	710.18	0
+bin	710.2	0
+bin	710.22	0
+bin	710.24	0
+bin	710.26	0
+bin	710.28	0
+bin	710.3	0
+bin	710.32	0
+bin	710.34	0
+bin	710.36	0
+bin	710.38	0
+scalar org.mobileHost[1].wlan[0].radio transmissionState:count 0
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar org.mobileHost[1].wlan[0].radio receptionState:count 5
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar org.mobileHost[1].wlan[0].radio radioMode:count 2
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+statistic org.mobileHost[1].wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar org.mobileHost[2].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar org.mobileHost[2].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar org.mobileHost[2].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar org.mobileHost[2].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar org.mobileHost[2].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar org.mobileHost[2].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar org.mobileHost[2].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar org.mobileHost[2].lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[2].lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[2].lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[2].lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[2].wlan[0].mac.statistics numReceivedUnicast 0
+scalar org.mobileHost[2].wlan[0].mac.statistics numReceivedBroadcast 0
+scalar org.mobileHost[2].wlan[0].mac.statistics numReceivedMulticast 0
+scalar org.mobileHost[2].wlan[0].mac.statistics numReceivedNotForUs 0
+scalar org.mobileHost[2].wlan[0].mac.statistics numReceivedErroneous 0
+scalar org.mobileHost[2].wlan[0].mac rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[2].wlan[0].mac rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[2].wlan[0].mac passedUpPk:count 2
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[2].wlan[0].mac passedUpPk:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[2].wlan[0].mac rcvdPkFromLL:count 2
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar org.mobileHost[2].wlan[0].mac rcvdPkFromLL:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar org.mobileHost[2].wlan[0].mac sentDownPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar org.mobileHost[2].wlan[0].mac sentDownPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+statistic org.mobileHost[2].wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[2].wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[2].wlan[0].radio packetErrorRate:histogram
+field count 2
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	2
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic org.mobileHost[2].wlan[0].radio minSNIR:histogram
+field count 2
+field mean 638.8824659931
+field stddev 0
+field min 638.8824659931
+field max 638.8824659931
+field sum 1277.7649319862
+field sqrsum 816341.61070684
+attr source minSNIR
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	638.38	0
+bin	638.4	0
+bin	638.42	0
+bin	638.44	0
+bin	638.46	0
+bin	638.48	0
+bin	638.5	0
+bin	638.52	0
+bin	638.54	0
+bin	638.56	0
+bin	638.58	0
+bin	638.6	0
+bin	638.62	0
+bin	638.64	0
+bin	638.66	0
+bin	638.68	0
+bin	638.7	0
+bin	638.72	0
+bin	638.74	0
+bin	638.76	0
+bin	638.78	0
+bin	638.8	0
+bin	638.82	0
+bin	638.84	0
+bin	638.86	0
+bin	638.88	2
+bin	638.9	0
+bin	638.92	0
+bin	638.94	0
+bin	638.96	0
+bin	638.98	0
+bin	639	0
+bin	639.02	0
+bin	639.04	0
+bin	639.06	0
+bin	639.08	0
+bin	639.1	0
+bin	639.12	0
+bin	639.14	0
+bin	639.16	0
+bin	639.18	0
+bin	639.2	0
+bin	639.22	0
+bin	639.24	0
+bin	639.26	0
+bin	639.28	0
+bin	639.3	0
+bin	639.32	0
+bin	639.34	0
+bin	639.36	0
+bin	639.38	0
+bin	639.4	0
+scalar org.mobileHost[2].wlan[0].radio transmissionState:count 0
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar org.mobileHost[2].wlan[0].radio receptionState:count 5
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar org.mobileHost[2].wlan[0].radio radioMode:count 2
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+statistic org.mobileHost[2].wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar org.mobileHost[3].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar org.mobileHost[3].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar org.mobileHost[3].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar org.mobileHost[3].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar org.mobileHost[3].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar org.mobileHost[3].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar org.mobileHost[3].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar org.mobileHost[3].lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[3].lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[3].lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[3].lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[3].wlan[0].mac.statistics numReceivedUnicast 0
+scalar org.mobileHost[3].wlan[0].mac.statistics numReceivedBroadcast 0
+scalar org.mobileHost[3].wlan[0].mac.statistics numReceivedMulticast 0
+scalar org.mobileHost[3].wlan[0].mac.statistics numReceivedNotForUs 0
+scalar org.mobileHost[3].wlan[0].mac.statistics numReceivedErroneous 0
+scalar org.mobileHost[3].wlan[0].mac rcvdPkFromHL:count 2
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[3].wlan[0].mac rcvdPkFromHL:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[3].wlan[0].mac passedUpPk:count 2
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[3].wlan[0].mac passedUpPk:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[3].wlan[0].mac rcvdPkFromLL:count 2
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar org.mobileHost[3].wlan[0].mac rcvdPkFromLL:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar org.mobileHost[3].wlan[0].mac sentDownPk:count 1
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar org.mobileHost[3].wlan[0].mac sentDownPk:sum(packetBytes) 1064
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+statistic org.mobileHost[3].wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[3].wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[3].wlan[0].radio packetErrorRate:histogram
+field count 2
+field mean 1.7482904013377e-010
+field stddev 0
+field min 1.7482904013377e-010
+field max 1.7482904013377e-010
+field sum 3.4965808026755e-010
+field sqrsum 6.1130386548193e-020
+attr source packetErrorRate
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	0	2
+bin	0.01	0
+bin	0.02	0
+bin	0.03	0
+bin	0.04	0
+bin	0.05	0
+bin	0.06	0
+bin	0.07	0
+bin	0.08	0
+bin	0.09	0
+bin	0.1	0
+bin	0.11	0
+bin	0.12	0
+bin	0.13	0
+bin	0.14	0
+bin	0.15	0
+bin	0.16	0
+bin	0.17	0
+bin	0.18	0
+bin	0.19	0
+bin	0.2	0
+bin	0.21	0
+bin	0.22	0
+bin	0.23	0
+bin	0.24	0
+bin	0.25	0
+bin	0.26	0
+bin	0.27	0
+bin	0.28	0
+bin	0.29	0
+bin	0.3	0
+bin	0.31	0
+bin	0.32	0
+bin	0.33	0
+bin	0.34	0
+bin	0.35	0
+bin	0.36	0
+bin	0.37	0
+bin	0.38	0
+bin	0.39	0
+bin	0.4	0
+bin	0.41	0
+bin	0.42	0
+bin	0.43	0
+bin	0.44	0
+bin	0.45	0
+bin	0.46	0
+bin	0.47	0
+bin	0.48	0
+bin	0.49	0
+bin	0.5	0
+bin	0.51	0
+statistic org.mobileHost[3].wlan[0].radio minSNIR:histogram
+field count 2
+field mean 491.44805076392
+field stddev 0
+field min 491.44805076392
+field max 491.44805076392
+field sum 982.89610152784
+field sqrsum 483042.37319931
+attr source minSNIR
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	490.94	0
+bin	490.96	0
+bin	490.98	0
+bin	491	0
+bin	491.02	0
+bin	491.04	0
+bin	491.06	0
+bin	491.08	0
+bin	491.1	0
+bin	491.12	0
+bin	491.14	0
+bin	491.16	0
+bin	491.18	0
+bin	491.2	0
+bin	491.22	0
+bin	491.24	0
+bin	491.26	0
+bin	491.28	0
+bin	491.3	0
+bin	491.32	0
+bin	491.34	0
+bin	491.36	0
+bin	491.38	0
+bin	491.4	0
+bin	491.42	0
+bin	491.44	2
+bin	491.46	0
+bin	491.48	0
+bin	491.5	0
+bin	491.52	0
+bin	491.54	0
+bin	491.56	0
+bin	491.58	0
+bin	491.6	0
+bin	491.62	0
+bin	491.64	0
+bin	491.66	0
+bin	491.68	0
+bin	491.7	0
+bin	491.72	0
+bin	491.74	0
+bin	491.76	0
+bin	491.78	0
+bin	491.8	0
+bin	491.82	0
+bin	491.84	0
+bin	491.86	0
+bin	491.88	0
+bin	491.9	0
+bin	491.92	0
+bin	491.94	0
+bin	491.96	0
+scalar org.mobileHost[3].wlan[0].radio transmissionState:count 2
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar org.mobileHost[3].wlan[0].radio receptionState:count 6
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar org.mobileHost[3].wlan[0].radio radioMode:count 3
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+statistic org.mobileHost[3].wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar org.mobileHost[4].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar org.mobileHost[4].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar org.mobileHost[4].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar org.mobileHost[4].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar org.mobileHost[4].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar org.mobileHost[4].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar org.mobileHost[4].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar org.mobileHost[4].lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[4].lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[4].lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[4].lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[4].wlan[0].mac.statistics numReceivedUnicast 0
+scalar org.mobileHost[4].wlan[0].mac.statistics numReceivedBroadcast 0
+scalar org.mobileHost[4].wlan[0].mac.statistics numReceivedMulticast 0
+scalar org.mobileHost[4].wlan[0].mac.statistics numReceivedNotForUs 0
+scalar org.mobileHost[4].wlan[0].mac.statistics numReceivedErroneous 0
+scalar org.mobileHost[4].wlan[0].mac rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[4].wlan[0].mac rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[4].wlan[0].mac passedUpPk:count 2
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[4].wlan[0].mac passedUpPk:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[4].wlan[0].mac rcvdPkFromLL:count 2
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar org.mobileHost[4].wlan[0].mac rcvdPkFromLL:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar org.mobileHost[4].wlan[0].mac sentDownPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar org.mobileHost[4].wlan[0].mac sentDownPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+statistic org.mobileHost[4].wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[4].wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[4].wlan[0].radio packetErrorRate:histogram
+field count 2
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	2
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic org.mobileHost[4].wlan[0].radio minSNIR:histogram
+field count 2
+field mean 1277.7649319862
+field stddev 0
+field min 1277.7649319862
+field max 1277.7649319862
+field sum 2555.5298639724
+field sqrsum 3265366.4428274
+attr source minSNIR
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	1277.26	0
+bin	1277.28	0
+bin	1277.3	0
+bin	1277.32	0
+bin	1277.34	0
+bin	1277.36	0
+bin	1277.38	0
+bin	1277.4	0
+bin	1277.42	0
+bin	1277.44	0
+bin	1277.46	0
+bin	1277.48	0
+bin	1277.5	0
+bin	1277.52	0
+bin	1277.54	0
+bin	1277.56	0
+bin	1277.58	0
+bin	1277.6	0
+bin	1277.62	0
+bin	1277.64	0
+bin	1277.66	0
+bin	1277.68	0
+bin	1277.7	0
+bin	1277.72	0
+bin	1277.74	0
+bin	1277.76	2
+bin	1277.78	0
+bin	1277.8	0
+bin	1277.82	0
+bin	1277.84	0
+bin	1277.86	0
+bin	1277.88	0
+bin	1277.9	0
+bin	1277.92	0
+bin	1277.94	0
+bin	1277.96	0
+bin	1277.98	0
+bin	1278	0
+bin	1278.02	0
+bin	1278.04	0
+bin	1278.06	0
+bin	1278.08	0
+bin	1278.1	0
+bin	1278.12	0
+bin	1278.14	0
+bin	1278.16	0
+bin	1278.18	0
+bin	1278.2	0
+bin	1278.22	0
+bin	1278.24	0
+bin	1278.26	0
+bin	1278.28	0
+scalar org.mobileHost[4].wlan[0].radio transmissionState:count 0
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar org.mobileHost[4].wlan[0].radio receptionState:count 5
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar org.mobileHost[4].wlan[0].radio radioMode:count 2
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+statistic org.mobileHost[4].wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar org.mobileHost[5].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar org.mobileHost[5].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar org.mobileHost[5].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar org.mobileHost[5].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar org.mobileHost[5].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar org.mobileHost[5].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar org.mobileHost[5].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar org.mobileHost[5].lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[5].lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[5].lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[5].lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[5].wlan[0].mac.statistics numReceivedUnicast 0
+scalar org.mobileHost[5].wlan[0].mac.statistics numReceivedBroadcast 0
+scalar org.mobileHost[5].wlan[0].mac.statistics numReceivedMulticast 0
+scalar org.mobileHost[5].wlan[0].mac.statistics numReceivedNotForUs 0
+scalar org.mobileHost[5].wlan[0].mac.statistics numReceivedErroneous 0
+scalar org.mobileHost[5].wlan[0].mac rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[5].wlan[0].mac rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[5].wlan[0].mac passedUpPk:count 2
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[5].wlan[0].mac passedUpPk:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[5].wlan[0].mac rcvdPkFromLL:count 2
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar org.mobileHost[5].wlan[0].mac rcvdPkFromLL:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar org.mobileHost[5].wlan[0].mac sentDownPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar org.mobileHost[5].wlan[0].mac sentDownPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+statistic org.mobileHost[5].wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[5].wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[5].wlan[0].radio packetErrorRate:histogram
+field count 2
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	2
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic org.mobileHost[5].wlan[0].radio minSNIR:histogram
+field count 2
+field mean 1597.2061649827
+field stddev 0
+field min 1597.2061649827
+field max 1597.2061649827
+field sum 3194.4123299655
+field sqrsum 5102135.0669177
+attr source minSNIR
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	1596.7	0
+bin	1596.72	0
+bin	1596.74	0
+bin	1596.76	0
+bin	1596.78	0
+bin	1596.8	0
+bin	1596.82	0
+bin	1596.84	0
+bin	1596.86	0
+bin	1596.88	0
+bin	1596.9	0
+bin	1596.92	0
+bin	1596.94	0
+bin	1596.96	0
+bin	1596.98	0
+bin	1597	0
+bin	1597.02	0
+bin	1597.04	0
+bin	1597.06	0
+bin	1597.08	0
+bin	1597.1	0
+bin	1597.12	0
+bin	1597.14	0
+bin	1597.16	0
+bin	1597.18	0
+bin	1597.2	2
+bin	1597.22	0
+bin	1597.24	0
+bin	1597.26	0
+bin	1597.28	0
+bin	1597.3	0
+bin	1597.32	0
+bin	1597.34	0
+bin	1597.36	0
+bin	1597.38	0
+bin	1597.4	0
+bin	1597.42	0
+bin	1597.44	0
+bin	1597.46	0
+bin	1597.48	0
+bin	1597.5	0
+bin	1597.52	0
+bin	1597.54	0
+bin	1597.56	0
+bin	1597.58	0
+bin	1597.6	0
+bin	1597.62	0
+bin	1597.64	0
+bin	1597.66	0
+bin	1597.68	0
+bin	1597.7	0
+bin	1597.72	0
+scalar org.mobileHost[5].wlan[0].radio transmissionState:count 0
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar org.mobileHost[5].wlan[0].radio receptionState:count 5
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar org.mobileHost[5].wlan[0].radio radioMode:count 2
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+statistic org.mobileHost[5].wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar org.mobileHost[6].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar org.mobileHost[6].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar org.mobileHost[6].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar org.mobileHost[6].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar org.mobileHost[6].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar org.mobileHost[6].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar org.mobileHost[6].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar org.mobileHost[6].lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[6].lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[6].lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[6].lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[6].wlan[0].mac.statistics numReceivedUnicast 0
+scalar org.mobileHost[6].wlan[0].mac.statistics numReceivedBroadcast 0
+scalar org.mobileHost[6].wlan[0].mac.statistics numReceivedMulticast 0
+scalar org.mobileHost[6].wlan[0].mac.statistics numReceivedNotForUs 0
+scalar org.mobileHost[6].wlan[0].mac.statistics numReceivedErroneous 0
+scalar org.mobileHost[6].wlan[0].mac rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[6].wlan[0].mac rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[6].wlan[0].mac passedUpPk:count 2
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[6].wlan[0].mac passedUpPk:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[6].wlan[0].mac rcvdPkFromLL:count 2
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar org.mobileHost[6].wlan[0].mac rcvdPkFromLL:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar org.mobileHost[6].wlan[0].mac sentDownPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar org.mobileHost[6].wlan[0].mac sentDownPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+statistic org.mobileHost[6].wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[6].wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[6].wlan[0].radio packetErrorRate:histogram
+field count 2
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	2
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic org.mobileHost[6].wlan[0].radio minSNIR:histogram
+field count 2
+field mean 1277.7649319862
+field stddev 0
+field min 1277.7649319862
+field max 1277.7649319862
+field sum 2555.5298639724
+field sqrsum 3265366.4428274
+attr source minSNIR
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	1277.26	0
+bin	1277.28	0
+bin	1277.3	0
+bin	1277.32	0
+bin	1277.34	0
+bin	1277.36	0
+bin	1277.38	0
+bin	1277.4	0
+bin	1277.42	0
+bin	1277.44	0
+bin	1277.46	0
+bin	1277.48	0
+bin	1277.5	0
+bin	1277.52	0
+bin	1277.54	0
+bin	1277.56	0
+bin	1277.58	0
+bin	1277.6	0
+bin	1277.62	0
+bin	1277.64	0
+bin	1277.66	0
+bin	1277.68	0
+bin	1277.7	0
+bin	1277.72	0
+bin	1277.74	0
+bin	1277.76	2
+bin	1277.78	0
+bin	1277.8	0
+bin	1277.82	0
+bin	1277.84	0
+bin	1277.86	0
+bin	1277.88	0
+bin	1277.9	0
+bin	1277.92	0
+bin	1277.94	0
+bin	1277.96	0
+bin	1277.98	0
+bin	1278	0
+bin	1278.02	0
+bin	1278.04	0
+bin	1278.06	0
+bin	1278.08	0
+bin	1278.1	0
+bin	1278.12	0
+bin	1278.14	0
+bin	1278.16	0
+bin	1278.18	0
+bin	1278.2	0
+bin	1278.22	0
+bin	1278.24	0
+bin	1278.26	0
+bin	1278.28	0
+scalar org.mobileHost[6].wlan[0].radio transmissionState:count 0
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar org.mobileHost[6].wlan[0].radio receptionState:count 5
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar org.mobileHost[6].wlan[0].radio radioMode:count 2
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+statistic org.mobileHost[6].wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar org.mobileHost[7].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar org.mobileHost[7].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar org.mobileHost[7].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar org.mobileHost[7].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar org.mobileHost[7].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar org.mobileHost[7].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar org.mobileHost[7].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar org.mobileHost[7].lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[7].lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[7].lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[7].lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[7].wlan[0].mac.statistics numReceivedUnicast 0
+scalar org.mobileHost[7].wlan[0].mac.statistics numReceivedBroadcast 0
+scalar org.mobileHost[7].wlan[0].mac.statistics numReceivedMulticast 0
+scalar org.mobileHost[7].wlan[0].mac.statistics numReceivedNotForUs 0
+scalar org.mobileHost[7].wlan[0].mac.statistics numReceivedErroneous 0
+scalar org.mobileHost[7].wlan[0].mac rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[7].wlan[0].mac rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[7].wlan[0].mac passedUpPk:count 2
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[7].wlan[0].mac passedUpPk:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[7].wlan[0].mac rcvdPkFromLL:count 2
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar org.mobileHost[7].wlan[0].mac rcvdPkFromLL:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar org.mobileHost[7].wlan[0].mac sentDownPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar org.mobileHost[7].wlan[0].mac sentDownPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+statistic org.mobileHost[7].wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[7].wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[7].wlan[0].radio packetErrorRate:histogram
+field count 2
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	2
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic org.mobileHost[7].wlan[0].radio minSNIR:histogram
+field count 2
+field mean 798.60308249137
+field stddev 0
+field min 798.60308249137
+field max 798.60308249137
+field sum 1597.2061649827
+field sqrsum 1275533.7667294
+attr source minSNIR
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	798.1	0
+bin	798.12	0
+bin	798.14	0
+bin	798.16	0
+bin	798.18	0
+bin	798.2	0
+bin	798.22	0
+bin	798.24	0
+bin	798.26	0
+bin	798.28	0
+bin	798.3	0
+bin	798.32	0
+bin	798.34	0
+bin	798.36	0
+bin	798.38	0
+bin	798.4	0
+bin	798.42	0
+bin	798.44	0
+bin	798.46	0
+bin	798.48	0
+bin	798.5	0
+bin	798.52	0
+bin	798.54	0
+bin	798.56	0
+bin	798.58	0
+bin	798.6	2
+bin	798.62	0
+bin	798.64	0
+bin	798.66	0
+bin	798.68	0
+bin	798.7	0
+bin	798.72	0
+bin	798.74	0
+bin	798.76	0
+bin	798.78	0
+bin	798.8	0
+bin	798.82	0
+bin	798.84	0
+bin	798.86	0
+bin	798.88	0
+bin	798.9	0
+bin	798.92	0
+bin	798.94	0
+bin	798.96	0
+bin	798.98	0
+bin	799	0
+bin	799.02	0
+bin	799.04	0
+bin	799.06	0
+bin	799.08	0
+bin	799.1	0
+bin	799.12	0
+scalar org.mobileHost[7].wlan[0].radio transmissionState:count 0
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar org.mobileHost[7].wlan[0].radio receptionState:count 5
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar org.mobileHost[7].wlan[0].radio radioMode:count 2
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+statistic org.mobileHost[7].wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar org.mobileHost[8].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar org.mobileHost[8].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar org.mobileHost[8].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar org.mobileHost[8].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar org.mobileHost[8].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar org.mobileHost[8].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar org.mobileHost[8].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar org.mobileHost[8].lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[8].lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[8].lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[8].lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[8].wlan[0].mac.statistics numReceivedUnicast 0
+scalar org.mobileHost[8].wlan[0].mac.statistics numReceivedBroadcast 0
+scalar org.mobileHost[8].wlan[0].mac.statistics numReceivedMulticast 0
+scalar org.mobileHost[8].wlan[0].mac.statistics numReceivedNotForUs 0
+scalar org.mobileHost[8].wlan[0].mac.statistics numReceivedErroneous 0
+scalar org.mobileHost[8].wlan[0].mac rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[8].wlan[0].mac rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[8].wlan[0].mac passedUpPk:count 2
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[8].wlan[0].mac passedUpPk:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[8].wlan[0].mac rcvdPkFromLL:count 2
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar org.mobileHost[8].wlan[0].mac rcvdPkFromLL:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar org.mobileHost[8].wlan[0].mac sentDownPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar org.mobileHost[8].wlan[0].mac sentDownPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+statistic org.mobileHost[8].wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[8].wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[8].wlan[0].radio packetErrorRate:histogram
+field count 2
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	2
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic org.mobileHost[8].wlan[0].radio minSNIR:histogram
+field count 2
+field mean 3194.4123299655
+field stddev 0
+field min 3194.4123299655
+field max 3194.4123299655
+field sum 6388.824659931
+field sqrsum 20408540.267671
+attr source minSNIR
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	3193.9	0
+bin	3193.92	0
+bin	3193.94	0
+bin	3193.96	0
+bin	3193.98	0
+bin	3194	0
+bin	3194.02	0
+bin	3194.04	0
+bin	3194.06	0
+bin	3194.08	0
+bin	3194.1	0
+bin	3194.12	0
+bin	3194.14	0
+bin	3194.16	0
+bin	3194.18	0
+bin	3194.2	0
+bin	3194.22	0
+bin	3194.24	0
+bin	3194.26	0
+bin	3194.28	0
+bin	3194.3	0
+bin	3194.32	0
+bin	3194.34	0
+bin	3194.36	0
+bin	3194.38	0
+bin	3194.4	2
+bin	3194.42	0
+bin	3194.44	0
+bin	3194.46	0
+bin	3194.48	0
+bin	3194.5	0
+bin	3194.52	0
+bin	3194.54	0
+bin	3194.56	0
+bin	3194.58	0
+bin	3194.6	0
+bin	3194.62	0
+bin	3194.64	0
+bin	3194.66	0
+bin	3194.68	0
+bin	3194.7	0
+bin	3194.72	0
+bin	3194.74	0
+bin	3194.76	0
+bin	3194.78	0
+bin	3194.8	0
+bin	3194.82	0
+bin	3194.84	0
+bin	3194.86	0
+bin	3194.88	0
+bin	3194.9	0
+bin	3194.92	0
+scalar org.mobileHost[8].wlan[0].radio transmissionState:count 0
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar org.mobileHost[8].wlan[0].radio receptionState:count 5
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar org.mobileHost[8].wlan[0].radio radioMode:count 2
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+statistic org.mobileHost[8].wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar org.mobileHost[9].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar org.mobileHost[9].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar org.mobileHost[9].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar org.mobileHost[9].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar org.mobileHost[9].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar org.mobileHost[9].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar org.mobileHost[9].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar org.mobileHost[9].lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[9].lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[9].lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[9].lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[9].wlan[0].mac.statistics numReceivedUnicast 0
+scalar org.mobileHost[9].wlan[0].mac.statistics numReceivedBroadcast 0
+scalar org.mobileHost[9].wlan[0].mac.statistics numReceivedMulticast 0
+scalar org.mobileHost[9].wlan[0].mac.statistics numReceivedNotForUs 0
+scalar org.mobileHost[9].wlan[0].mac.statistics numReceivedErroneous 0
+scalar org.mobileHost[9].wlan[0].mac rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[9].wlan[0].mac rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[9].wlan[0].mac passedUpPk:count 2
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[9].wlan[0].mac passedUpPk:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[9].wlan[0].mac rcvdPkFromLL:count 2
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar org.mobileHost[9].wlan[0].mac rcvdPkFromLL:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar org.mobileHost[9].wlan[0].mac sentDownPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar org.mobileHost[9].wlan[0].mac sentDownPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+statistic org.mobileHost[9].wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[9].wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[9].wlan[0].radio packetErrorRate:histogram
+field count 2
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	2
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic org.mobileHost[9].wlan[0].radio minSNIR:histogram
+field count 2
+field mean 6388.824659931
+field stddev 0
+field min 6388.824659931
+field max 6388.824659931
+field sum 12777.649319862
+field sqrsum 81634161.070684
+attr source minSNIR
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	6388.32	0
+bin	6388.34	0
+bin	6388.36	0
+bin	6388.38	0
+bin	6388.4	0
+bin	6388.42	0
+bin	6388.44	0
+bin	6388.46	0
+bin	6388.48	0
+bin	6388.5	0
+bin	6388.52	0
+bin	6388.54	0
+bin	6388.56	0
+bin	6388.58	0
+bin	6388.6	0
+bin	6388.62	0
+bin	6388.64	0
+bin	6388.66	0
+bin	6388.68	0
+bin	6388.7	0
+bin	6388.72	0
+bin	6388.74	0
+bin	6388.76	0
+bin	6388.78	0
+bin	6388.8	0
+bin	6388.82	2
+bin	6388.84	0
+bin	6388.86	0
+bin	6388.88	0
+bin	6388.9	0
+bin	6388.92	0
+bin	6388.94	0
+bin	6388.96	0
+bin	6388.98	0
+bin	6389	0
+bin	6389.02	0
+bin	6389.04	0
+bin	6389.06	0
+bin	6389.08	0
+bin	6389.1	0
+bin	6389.12	0
+bin	6389.14	0
+bin	6389.16	0
+bin	6389.18	0
+bin	6389.2	0
+bin	6389.22	0
+bin	6389.24	0
+bin	6389.26	0
+bin	6389.28	0
+bin	6389.3	0
+bin	6389.32	0
+bin	6389.34	0
+scalar org.mobileHost[9].wlan[0].radio transmissionState:count 0
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar org.mobileHost[9].wlan[0].radio receptionState:count 5
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar org.mobileHost[9].wlan[0].radio radioMode:count 2
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+statistic org.mobileHost[9].wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar org.mobileHost[10].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar org.mobileHost[10].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar org.mobileHost[10].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar org.mobileHost[10].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar org.mobileHost[10].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar org.mobileHost[10].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar org.mobileHost[10].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar org.mobileHost[10].lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[10].lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[10].lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[10].lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[10].wlan[0].mac.statistics numReceivedUnicast 0
+scalar org.mobileHost[10].wlan[0].mac.statistics numReceivedBroadcast 0
+scalar org.mobileHost[10].wlan[0].mac.statistics numReceivedMulticast 0
+scalar org.mobileHost[10].wlan[0].mac.statistics numReceivedNotForUs 0
+scalar org.mobileHost[10].wlan[0].mac.statistics numReceivedErroneous 0
+scalar org.mobileHost[10].wlan[0].mac rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[10].wlan[0].mac rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[10].wlan[0].mac passedUpPk:count 2
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[10].wlan[0].mac passedUpPk:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[10].wlan[0].mac rcvdPkFromLL:count 2
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar org.mobileHost[10].wlan[0].mac rcvdPkFromLL:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar org.mobileHost[10].wlan[0].mac sentDownPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar org.mobileHost[10].wlan[0].mac sentDownPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+statistic org.mobileHost[10].wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[10].wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[10].wlan[0].radio packetErrorRate:histogram
+field count 2
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	2
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic org.mobileHost[10].wlan[0].radio minSNIR:histogram
+field count 2
+field mean 3194.4123299655
+field stddev 0
+field min 3194.4123299655
+field max 3194.4123299655
+field sum 6388.824659931
+field sqrsum 20408540.267671
+attr source minSNIR
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	3193.9	0
+bin	3193.92	0
+bin	3193.94	0
+bin	3193.96	0
+bin	3193.98	0
+bin	3194	0
+bin	3194.02	0
+bin	3194.04	0
+bin	3194.06	0
+bin	3194.08	0
+bin	3194.1	0
+bin	3194.12	0
+bin	3194.14	0
+bin	3194.16	0
+bin	3194.18	0
+bin	3194.2	0
+bin	3194.22	0
+bin	3194.24	0
+bin	3194.26	0
+bin	3194.28	0
+bin	3194.3	0
+bin	3194.32	0
+bin	3194.34	0
+bin	3194.36	0
+bin	3194.38	0
+bin	3194.4	2
+bin	3194.42	0
+bin	3194.44	0
+bin	3194.46	0
+bin	3194.48	0
+bin	3194.5	0
+bin	3194.52	0
+bin	3194.54	0
+bin	3194.56	0
+bin	3194.58	0
+bin	3194.6	0
+bin	3194.62	0
+bin	3194.64	0
+bin	3194.66	0
+bin	3194.68	0
+bin	3194.7	0
+bin	3194.72	0
+bin	3194.74	0
+bin	3194.76	0
+bin	3194.78	0
+bin	3194.8	0
+bin	3194.82	0
+bin	3194.84	0
+bin	3194.86	0
+bin	3194.88	0
+bin	3194.9	0
+bin	3194.92	0
+scalar org.mobileHost[10].wlan[0].radio transmissionState:count 0
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar org.mobileHost[10].wlan[0].radio receptionState:count 5
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar org.mobileHost[10].wlan[0].radio radioMode:count 2
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+statistic org.mobileHost[10].wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar org.mobileHost[11].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar org.mobileHost[11].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar org.mobileHost[11].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar org.mobileHost[11].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar org.mobileHost[11].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar org.mobileHost[11].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar org.mobileHost[11].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar org.mobileHost[11].lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[11].lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[11].lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[11].lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[11].wlan[0].mac.statistics numReceivedUnicast 0
+scalar org.mobileHost[11].wlan[0].mac.statistics numReceivedBroadcast 0
+scalar org.mobileHost[11].wlan[0].mac.statistics numReceivedMulticast 0
+scalar org.mobileHost[11].wlan[0].mac.statistics numReceivedNotForUs 0
+scalar org.mobileHost[11].wlan[0].mac.statistics numReceivedErroneous 0
+scalar org.mobileHost[11].wlan[0].mac rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[11].wlan[0].mac rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[11].wlan[0].mac passedUpPk:count 2
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[11].wlan[0].mac passedUpPk:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[11].wlan[0].mac rcvdPkFromLL:count 2
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar org.mobileHost[11].wlan[0].mac rcvdPkFromLL:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar org.mobileHost[11].wlan[0].mac sentDownPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar org.mobileHost[11].wlan[0].mac sentDownPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+statistic org.mobileHost[11].wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[11].wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[11].wlan[0].radio packetErrorRate:histogram
+field count 2
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	2
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic org.mobileHost[11].wlan[0].radio minSNIR:histogram
+field count 2
+field mean 1277.7649319862
+field stddev 0
+field min 1277.7649319862
+field max 1277.7649319862
+field sum 2555.5298639724
+field sqrsum 3265366.4428274
+attr source minSNIR
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	1277.26	0
+bin	1277.28	0
+bin	1277.3	0
+bin	1277.32	0
+bin	1277.34	0
+bin	1277.36	0
+bin	1277.38	0
+bin	1277.4	0
+bin	1277.42	0
+bin	1277.44	0
+bin	1277.46	0
+bin	1277.48	0
+bin	1277.5	0
+bin	1277.52	0
+bin	1277.54	0
+bin	1277.56	0
+bin	1277.58	0
+bin	1277.6	0
+bin	1277.62	0
+bin	1277.64	0
+bin	1277.66	0
+bin	1277.68	0
+bin	1277.7	0
+bin	1277.72	0
+bin	1277.74	0
+bin	1277.76	2
+bin	1277.78	0
+bin	1277.8	0
+bin	1277.82	0
+bin	1277.84	0
+bin	1277.86	0
+bin	1277.88	0
+bin	1277.9	0
+bin	1277.92	0
+bin	1277.94	0
+bin	1277.96	0
+bin	1277.98	0
+bin	1278	0
+bin	1278.02	0
+bin	1278.04	0
+bin	1278.06	0
+bin	1278.08	0
+bin	1278.1	0
+bin	1278.12	0
+bin	1278.14	0
+bin	1278.16	0
+bin	1278.18	0
+bin	1278.2	0
+bin	1278.22	0
+bin	1278.24	0
+bin	1278.26	0
+bin	1278.28	0
+scalar org.mobileHost[11].wlan[0].radio transmissionState:count 0
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar org.mobileHost[11].wlan[0].radio receptionState:count 5
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar org.mobileHost[11].wlan[0].radio radioMode:count 2
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+statistic org.mobileHost[11].wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar org.mobileHost[12].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar org.mobileHost[12].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar org.mobileHost[12].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar org.mobileHost[12].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar org.mobileHost[12].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar org.mobileHost[12].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar org.mobileHost[12].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar org.mobileHost[12].lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[12].lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[12].lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[12].lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[12].wlan[0].mac.statistics numReceivedUnicast 0
+scalar org.mobileHost[12].wlan[0].mac.statistics numReceivedBroadcast 0
+scalar org.mobileHost[12].wlan[0].mac.statistics numReceivedMulticast 0
+scalar org.mobileHost[12].wlan[0].mac.statistics numReceivedNotForUs 0
+scalar org.mobileHost[12].wlan[0].mac.statistics numReceivedErroneous 0
+scalar org.mobileHost[12].wlan[0].mac rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[12].wlan[0].mac rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[12].wlan[0].mac passedUpPk:count 2
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[12].wlan[0].mac passedUpPk:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[12].wlan[0].mac rcvdPkFromLL:count 2
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar org.mobileHost[12].wlan[0].mac rcvdPkFromLL:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar org.mobileHost[12].wlan[0].mac sentDownPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar org.mobileHost[12].wlan[0].mac sentDownPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+statistic org.mobileHost[12].wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[12].wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[12].wlan[0].radio packetErrorRate:histogram
+field count 2
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	2
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic org.mobileHost[12].wlan[0].radio minSNIR:histogram
+field count 2
+field mean 6388.824659931
+field stddev 0
+field min 6388.824659931
+field max 6388.824659931
+field sum 12777.649319862
+field sqrsum 81634161.070684
+attr source minSNIR
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	6388.32	0
+bin	6388.34	0
+bin	6388.36	0
+bin	6388.38	0
+bin	6388.4	0
+bin	6388.42	0
+bin	6388.44	0
+bin	6388.46	0
+bin	6388.48	0
+bin	6388.5	0
+bin	6388.52	0
+bin	6388.54	0
+bin	6388.56	0
+bin	6388.58	0
+bin	6388.6	0
+bin	6388.62	0
+bin	6388.64	0
+bin	6388.66	0
+bin	6388.68	0
+bin	6388.7	0
+bin	6388.72	0
+bin	6388.74	0
+bin	6388.76	0
+bin	6388.78	0
+bin	6388.8	0
+bin	6388.82	2
+bin	6388.84	0
+bin	6388.86	0
+bin	6388.88	0
+bin	6388.9	0
+bin	6388.92	0
+bin	6388.94	0
+bin	6388.96	0
+bin	6388.98	0
+bin	6389	0
+bin	6389.02	0
+bin	6389.04	0
+bin	6389.06	0
+bin	6389.08	0
+bin	6389.1	0
+bin	6389.12	0
+bin	6389.14	0
+bin	6389.16	0
+bin	6389.18	0
+bin	6389.2	0
+bin	6389.22	0
+bin	6389.24	0
+bin	6389.26	0
+bin	6389.28	0
+bin	6389.3	0
+bin	6389.32	0
+bin	6389.34	0
+scalar org.mobileHost[12].wlan[0].radio transmissionState:count 0
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar org.mobileHost[12].wlan[0].radio receptionState:count 5
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar org.mobileHost[12].wlan[0].radio radioMode:count 2
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+statistic org.mobileHost[12].wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar org.mobileHost[13].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar org.mobileHost[13].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar org.mobileHost[13].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar org.mobileHost[13].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar org.mobileHost[13].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar org.mobileHost[13].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar org.mobileHost[13].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar org.mobileHost[13].lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[13].lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[13].lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[13].lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[13].wlan[0].mac.statistics numReceivedUnicast 0
+scalar org.mobileHost[13].wlan[0].mac.statistics numReceivedBroadcast 0
+scalar org.mobileHost[13].wlan[0].mac.statistics numReceivedMulticast 0
+scalar org.mobileHost[13].wlan[0].mac.statistics numReceivedNotForUs 0
+scalar org.mobileHost[13].wlan[0].mac.statistics numReceivedErroneous 0
+scalar org.mobileHost[13].wlan[0].mac rcvdPkFromHL:count 2
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[13].wlan[0].mac rcvdPkFromHL:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[13].wlan[0].mac passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[13].wlan[0].mac passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[13].wlan[0].mac rcvdPkFromLL:count 0
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar org.mobileHost[13].wlan[0].mac rcvdPkFromLL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar org.mobileHost[13].wlan[0].mac sentDownPk:count 2
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar org.mobileHost[13].wlan[0].mac sentDownPk:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+statistic org.mobileHost[13].wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[13].wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[13].wlan[0].radio packetErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source packetErrorRate
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[13].wlan[0].radio minSNIR:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source minSNIR
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar org.mobileHost[13].wlan[0].radio transmissionState:count 8
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar org.mobileHost[13].wlan[0].radio receptionState:count 5
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar org.mobileHost[13].wlan[0].radio radioMode:count 6
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+statistic org.mobileHost[13].wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar org.mobileHost[14].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar org.mobileHost[14].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar org.mobileHost[14].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar org.mobileHost[14].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar org.mobileHost[14].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar org.mobileHost[14].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar org.mobileHost[14].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar org.mobileHost[14].lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[14].lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[14].lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[14].lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[14].wlan[0].mac.statistics numReceivedUnicast 0
+scalar org.mobileHost[14].wlan[0].mac.statistics numReceivedBroadcast 0
+scalar org.mobileHost[14].wlan[0].mac.statistics numReceivedMulticast 0
+scalar org.mobileHost[14].wlan[0].mac.statistics numReceivedNotForUs 0
+scalar org.mobileHost[14].wlan[0].mac.statistics numReceivedErroneous 0
+scalar org.mobileHost[14].wlan[0].mac rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[14].wlan[0].mac rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[14].wlan[0].mac passedUpPk:count 2
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[14].wlan[0].mac passedUpPk:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[14].wlan[0].mac rcvdPkFromLL:count 2
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar org.mobileHost[14].wlan[0].mac rcvdPkFromLL:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar org.mobileHost[14].wlan[0].mac sentDownPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar org.mobileHost[14].wlan[0].mac sentDownPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+statistic org.mobileHost[14].wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[14].wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[14].wlan[0].radio packetErrorRate:histogram
+field count 2
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	2
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic org.mobileHost[14].wlan[0].radio minSNIR:histogram
+field count 2
+field mean 6388.824659931
+field stddev 0
+field min 6388.824659931
+field max 6388.824659931
+field sum 12777.649319862
+field sqrsum 81634161.070684
+attr source minSNIR
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	6388.32	0
+bin	6388.34	0
+bin	6388.36	0
+bin	6388.38	0
+bin	6388.4	0
+bin	6388.42	0
+bin	6388.44	0
+bin	6388.46	0
+bin	6388.48	0
+bin	6388.5	0
+bin	6388.52	0
+bin	6388.54	0
+bin	6388.56	0
+bin	6388.58	0
+bin	6388.6	0
+bin	6388.62	0
+bin	6388.64	0
+bin	6388.66	0
+bin	6388.68	0
+bin	6388.7	0
+bin	6388.72	0
+bin	6388.74	0
+bin	6388.76	0
+bin	6388.78	0
+bin	6388.8	0
+bin	6388.82	2
+bin	6388.84	0
+bin	6388.86	0
+bin	6388.88	0
+bin	6388.9	0
+bin	6388.92	0
+bin	6388.94	0
+bin	6388.96	0
+bin	6388.98	0
+bin	6389	0
+bin	6389.02	0
+bin	6389.04	0
+bin	6389.06	0
+bin	6389.08	0
+bin	6389.1	0
+bin	6389.12	0
+bin	6389.14	0
+bin	6389.16	0
+bin	6389.18	0
+bin	6389.2	0
+bin	6389.22	0
+bin	6389.24	0
+bin	6389.26	0
+bin	6389.28	0
+bin	6389.3	0
+bin	6389.32	0
+bin	6389.34	0
+scalar org.mobileHost[14].wlan[0].radio transmissionState:count 0
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar org.mobileHost[14].wlan[0].radio receptionState:count 5
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar org.mobileHost[14].wlan[0].radio radioMode:count 2
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+statistic org.mobileHost[14].wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar org.mobileHost[15].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar org.mobileHost[15].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar org.mobileHost[15].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar org.mobileHost[15].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar org.mobileHost[15].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar org.mobileHost[15].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar org.mobileHost[15].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar org.mobileHost[15].lo0.lo rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[15].lo0.lo rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[15].lo0.lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[15].lo0.lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[15].wlan[0].mac.statistics numReceivedUnicast 0
+scalar org.mobileHost[15].wlan[0].mac.statistics numReceivedBroadcast 0
+scalar org.mobileHost[15].wlan[0].mac.statistics numReceivedMulticast 0
+scalar org.mobileHost[15].wlan[0].mac.statistics numReceivedNotForUs 0
+scalar org.mobileHost[15].wlan[0].mac.statistics numReceivedErroneous 0
+scalar org.mobileHost[15].wlan[0].mac rcvdPkFromHL:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar org.mobileHost[15].wlan[0].mac rcvdPkFromHL:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar org.mobileHost[15].wlan[0].mac passedUpPk:count 2
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar org.mobileHost[15].wlan[0].mac passedUpPk:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar org.mobileHost[15].wlan[0].mac rcvdPkFromLL:count 2
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar org.mobileHost[15].wlan[0].mac rcvdPkFromLL:sum(packetBytes) 2128
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar org.mobileHost[15].wlan[0].mac sentDownPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar org.mobileHost[15].wlan[0].mac sentDownPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+statistic org.mobileHost[15].wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[15].wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic org.mobileHost[15].wlan[0].radio packetErrorRate:histogram
+field count 2
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	2
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic org.mobileHost[15].wlan[0].radio minSNIR:histogram
+field count 2
+field mean 1597.2061649827
+field stddev 0
+field min 1597.2061649827
+field max 1597.2061649827
+field sum 3194.4123299655
+field sqrsum 5102135.0669177
+attr source minSNIR
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	1596.7	0
+bin	1596.72	0
+bin	1596.74	0
+bin	1596.76	0
+bin	1596.78	0
+bin	1596.8	0
+bin	1596.82	0
+bin	1596.84	0
+bin	1596.86	0
+bin	1596.88	0
+bin	1596.9	0
+bin	1596.92	0
+bin	1596.94	0
+bin	1596.96	0
+bin	1596.98	0
+bin	1597	0
+bin	1597.02	0
+bin	1597.04	0
+bin	1597.06	0
+bin	1597.08	0
+bin	1597.1	0
+bin	1597.12	0
+bin	1597.14	0
+bin	1597.16	0
+bin	1597.18	0
+bin	1597.2	2
+bin	1597.22	0
+bin	1597.24	0
+bin	1597.26	0
+bin	1597.28	0
+bin	1597.3	0
+bin	1597.32	0
+bin	1597.34	0
+bin	1597.36	0
+bin	1597.38	0
+bin	1597.4	0
+bin	1597.42	0
+bin	1597.44	0
+bin	1597.46	0
+bin	1597.48	0
+bin	1597.5	0
+bin	1597.52	0
+bin	1597.54	0
+bin	1597.56	0
+bin	1597.58	0
+bin	1597.6	0
+bin	1597.62	0
+bin	1597.64	0
+bin	1597.66	0
+bin	1597.68	0
+bin	1597.7	0
+bin	1597.72	0
+scalar org.mobileHost[15].wlan[0].radio transmissionState:count 0
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+scalar org.mobileHost[15].wlan[0].radio receptionState:count 5
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar org.mobileHost[15].wlan[0].radio radioMode:count 2
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+statistic org.mobileHost[15].wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+

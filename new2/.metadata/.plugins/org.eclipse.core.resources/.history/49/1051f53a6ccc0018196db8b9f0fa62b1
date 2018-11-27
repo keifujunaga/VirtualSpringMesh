@@ -1,0 +1,330 @@
+//
+// Author: Marcin Kosiba marcin.kosiba@gmail.com
+// Copyright (C) 2009 Marcin Kosiba
+//
+// This program is free software; you can redistribute it and/or
+// modify it under the terms of the GNU General Public License
+// as published by the Free Software Foundation; either version 2
+// of the License, or (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+//
+
+#include <iostream>
+#include <cmath>
+
+#include "inet/mobility/single/VirtualSpring.h"
+#include "inet/physicallayer/pathloss/FreeSpacePathLoss.h"
+
+#define ABS
+namespace inet
+{
+
+Define_Module(VirtualSpring);
+
+
+VirtualSpring::VirtualSpring()
+{
+    EV_INFO << "VirtualSpring()" << endl;
+    speed = 0;
+    speedMean = 0;
+    angleMean = 0;
+    numHost = 0; //
+    cRange = 0;
+    nodeNum = 0;
+    lo = 0;
+    kAtA = 0;
+    frequency = 0;
+    propagationSpeed = 0;
+    for(unsigned int i=0; i<numHost; i++){
+        nodePs[i] = Coord::ZERO;
+        acceleration[i] = Coord::ZERO;
+        for(unsigned int j=0; j<numHost;j++){
+            li[i][j] = 0;
+            unitvector[i][j] = Coord::ZERO;
+        }
+    }
+
+    nextMoveIsWait = false;
+}
+
+void VirtualSpring::initialize(int stage)
+{
+    EV_INFO << "initializing VirtualSpring stage " << stage << endl;
+    VirtualSpringBase::initialize(stage);
+    if (stage == INITSTAGE_LOCAL)
+    {
+        speedMean = par("speed");
+        angleMean = par("angle");
+        numHost = par("numHost");
+        cRange = par("cRange");
+        nodeNum = par("nodeNum");
+        lo = par("lo");
+        kAtA = par("kAtA");
+        frequency = par("frequency");
+        propagationSpeed = par("propagationSpeed");
+        division = par("division");
+        dbm = par("dbm");
+        lbreq = par("lbreq");
+
+        speed = speedMean;
+
+        nodePs = new Coord[numHost];
+
+        li = new double *[numHost];
+        for (unsigned int i=0; i<numHost; ++i)
+            li[i] = new double [numHost];
+
+        acceleration = new Coord [numHost];
+
+        unitvector = new Coord *[numHost];
+        for (unsigned int i=0; i<numHost; ++i)
+            unitvector[i] = new Coord[numHost];
+        setinitialPosition();
+    }
+}
+
+VirtualSpring::~VirtualSpring()
+{
+    EV_INFO << "~VirtualSpring()" << endl;
+    delete [] nodePs;
+    delete [] acceleration;
+
+    for(unsigned int i=0; i<numHost; ++i)
+        delete [] li[i];
+    delete [] li;
+
+    for(unsigned int i=0; i<numHost; ++i)
+        delete [] unitvector[i];
+    delete [] unitvector;
+}
+
+
+void VirtualSpring::setinitialPosition()
+{ //This function is completed
+    EV_INFO << "setinitialPosition" << endl;
+    int segment = numHost / 5;
+    int totalnum = 0;
+    for(unsigned int i=0; i<numHost; i++)
+    {
+        nodePs[i].x = (i + 1) * 60;
+        nodePs[i].y = (i + 1) * 40;
+        nodePs[i].z = 25; // altitude
+        EV_INFO << "nodePs[" << i << "].x" << "=" << nodePs[i].x << endl;
+        EV_INFO << "nodePs[" << i << "].y" << "=" << nodePs[i].y << endl;
+    }
+}
+
+void VirtualSpring::setlastPosition()
+{
+    EV_INFO << "setlastPosition()" << endl;
+    EV_INFO << "lastPosition" << nodeNum << " = " << lastPosition << endl;
+    nodePs[nodeNum] = lastPosition;
+}
+
+bool VirtualSpring::setVirtualSpring(int i, int j)
+{
+    Coord O;
+    for(int k = 0; k < numHost; k++)
+    {
+        if(k == i || k == j)
+        {
+        }
+        else
+        {
+            O.x = (nodePs[i].x + nodePs[j].x) / 2; // tyuuten
+            O.y = (nodePs[i].y + nodePs[j].y) / 2; // tyuuten
+
+            double ptd = PositionToDistance(nodePs[i], nodePs[j]) / 2;
+
+            if((PositionToDistance(nodePs[i], nodePs[j]) / 2) >= PositionToDistance(nodePs[k], O))
+            {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+
+/** division 1 phase **/
+void VirtualSpring::setUnitvector()
+{ //This function is uncompleted
+    EV_INFO << "setUnitvector()" << endl;
+
+    for(int i=0; i<numHost; i++)
+    {
+        for(int j=0; j<numHost; j++)
+        {
+            EV_INFO << "nodePs[" << i << "]" << "nodePs[" << j << "]" << ":" << "dbm ="
+                    << dbm - computeFreeSpacePathLoss(PositionToDistance(nodePs[i], nodePs[j])) << endl;
+            li[i][j] = PositionToDistance(nodePs[i], nodePs[j]);
+            if(cRange - li[i][j] > 0 &&  i != j && setVirtualSpring(i,j) == true)
+            {
+                unitvector[i][j].x = (nodePs[j].x - nodePs[i].x) / li[i][j];
+                unitvector[i][j].y = (nodePs[j].y - nodePs[i].y) / li[i][j];
+            }
+            else
+            {
+                unitvector[i][j].x = 0.0;
+                unitvector[i][j].y = 0.0;
+            }
+        }
+    }
+}
+
+/** division 2 phase **/
+double VirtualSpring::computeFreeSpacePathLoss(double distance)
+{
+    double waveLength = propagationSpeed / frequency;
+    return distance == 0.0 ? 1.0 : 20 * log10(4 * M_PI * distance / waveLength);
+}
+
+double VirtualSpring::PositionToDistance(Coord a, Coord b)
+{
+    return sqrt(pow((a.x - b.x),2) + pow((a.y - b.y),2));
+}
+
+double VirtualSpring::DistanceToDelta(int i, int j, double dbm, double lbreq)
+{
+    double min, max;
+    double distance = PositionToDistance(nodePs[i], nodePs[j]);
+    double lb = dbm - computeFreeSpacePathLoss(distance);
+
+    if(i != j)
+    {
+        if(lb - lbreq > 0)
+        {
+            max = lb; min = lbreq;
+        }
+        else
+        {
+            max = lbreq; min = lb;
+        }
+
+        return sqrt(max/min) - 1;
+    }
+
+    return 0;
+}
+
+
+/** general **/
+void VirtualSpring::setAcceleration()
+{
+    EV_INFO << "setAcceleration()" << ": division is " << division << endl;
+    switch (division)
+    {
+    case 1:
+        for(int i=0; i<numHost; i++)
+        {
+            EV_INFO << "switch" << i << endl;
+            for(int j=0; j<numHost; j++)
+            {
+                EV_INFO << "li[" << i << "][" << j << "]" << li[i][j] << endl;
+                EV_INFO << "lo" << lo << endl;
+                EV_INFO << "unitvecor[" << i << "][" << j << "]" << unitvector[i][j] << endl;
+
+                if(cRange - li[i][j] > 0 &&  i != j && setVirtualSpring(i,j) == true){
+                    acceleration[i].x += kAtA * (li[i][j] - lo) * unitvector[i][j].x;
+                    acceleration[i].y += kAtA * (li[i][j] - lo) * unitvector[i][j].y;
+                }
+            }
+            EV_INFO << endl << endl;
+        }
+        for(int i=0; i<numHost; i++)
+        {
+            EV_INFO << "acceleration[" << i << "]" << acceleration[i] << endl;
+        }
+        break;
+    case 2:
+        EV_INFO << "case 2" << endl;
+        for(int i=0; i<numHost; i++)
+        {
+            for(int j=0; j<numHost; j++)
+            {
+                EV_INFO << "li[" << i << "][" << j << "]" << li[i][j] << endl;
+                EV_INFO << "lo" << lo << endl;
+                EV_INFO << "unitvecor[" << i << "][" << j << "]" << unitvector[i][j] << endl;
+                EV_INFO << "DistanceToDelta(" << i << "," << j << "," << dbm << "," << lbreq << ")" << " = "
+                        << DistanceToDelta(i,j,dbm,lbreq) << endl;
+
+                if(setVirtualSpring(i,j) == true){
+                    acceleration[i].x += kAtA * DistanceToDelta(i, j, dbm, lbreq) * unitvector[i][j].x;
+                    acceleration[i].y += kAtA * DistanceToDelta(i, j, dbm, lbreq) * unitvector[i][j].y;
+                    EV_INFO << "acceleration[" << i << "]" << acceleration[i] << endl;
+                }
+            }
+        }
+        break;
+    }
+}
+
+void VirtualSpring::resetAcceleration()
+{
+    EV_INFO << "resetAcceleration" << endl;
+    for(int i=0; i<numHost; i++)
+    {
+        acceleration[i].x = 0.0;
+        acceleration[i].y = 0.0;
+    }
+}
+
+void VirtualSpring::AccelerationToPosition(simtime_t traveltime)
+{
+    EV_INFO << "Acceleration to Position" << endl;
+    double seconds = traveltime.dbl();
+    for(int i=0; i<numHost; i++)
+    {
+        nodePs[i].x += acceleration[i].x / 2 * pow(seconds,2) + speed * seconds;
+        nodePs[i].y += acceleration[i].y / 2 * pow(seconds,2) + speed * seconds;
+        nodePs[i].z = 25;
+        EV_INFO << "acceleration[" << i << "]" << acceleration[i] << endl;
+        EV_INFO << "nodePs[" << i << "]" << nodePs[i] << endl;
+    }
+}
+
+int VirtualSpring::NaturalLength(double a, double b){
+    if(a < b)
+        return -lo;
+    else
+        return lo;
+}
+
+void VirtualSpring::setTargetPosition()
+{
+    EV_INFO << "setTargetPosition()" << endl;
+    if (nextMoveIsWait)
+    {
+        simtime_t waitTime = par("waitTime");
+        nextChange = simTime() + waitTime;
+    }
+    else
+    {
+        //setlastPosition();
+        setUnitvector();
+        setAcceleration(); //error resolve (didn't write "waittime" in inifile)
+        simtime_t travelTime = par("travelTime");
+        AccelerationToPosition(travelTime);  //EV_INFO << "acceleration[" << nodeNum << "].x = " << acceleration[nodeNum].x << endl;
+        resetAcceleration();
+        targetPosition = nodePs[nodeNum];
+        nextChange = simTime() + travelTime;
+    }
+    nextMoveIsWait = !nextMoveIsWait;
+}
+
+void VirtualSpring::move()
+{
+    VirtualSpringBase::move();
+    //raiseErrorIfOutside();
+}
+
+} // namespace inet
+

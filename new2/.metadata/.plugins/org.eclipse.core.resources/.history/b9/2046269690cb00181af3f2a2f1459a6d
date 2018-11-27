@@ -1,0 +1,11 @@
+
+#ifndef INET_MOBILITY_SINGLE_NODEPS_H_
+#define INET_MOBILITY_SINGLE_NODEPS_H_
+
+#include <iostream>
+#include "inet/common/geometry/common/Coord.h"
+
+namespace inet
+{
+    extern Coord nodePs[5];
+}

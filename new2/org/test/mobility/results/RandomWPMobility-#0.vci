@@ -1,0 +1,84 @@
+file 31216 1535259644                                           
+version 2
+run RandomWPMobility-0-20180826-08:40:06-14832
+attr configname RandomWPMobility
+attr datetime 20180826-08:40:06
+attr experiment RandomWPMobility
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network MobileNetwork
+attr processid 14832
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.numHosts 5
+param **.host*.mobilityType "\"RandomWPMobility\""
+param **.host*.mobility.initFromDisplayString false
+param **.host[0].mobility.speed 10*uniform(20mps,50mps)
+param **.host*.mobility.speed uniform(20mps,50mps)
+param **.host*.mobility.waitTime uniform(3s,8s)
+param *.numHosts 2
+param **.constraintAreaMinX 0m
+param **.constraintAreaMinY 0m
+param **.constraintAreaMinZ 0m
+param **.constraintAreaMaxX 600m
+param **.constraintAreaMaxY 400m
+param **.constraintAreaMaxZ 0m
+param **.updateInterval 0.1s
+param **.mobility.initFromDisplayString false
+
+vector 0 MobileNetwork.host[0] coordX:vector ETV
+attr interpolationmode linear
+attr source xCoord(mobilityPos(mobilityStateChanged))
+attr title "coord X, vector"
+vector 1 MobileNetwork.host[0] coordY:vector ETV
+attr interpolationmode linear
+attr source yCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Y, vector"
+vector 2 MobileNetwork.host[1] coordX:vector ETV
+attr interpolationmode linear
+attr source xCoord(mobilityPos(mobilityStateChanged))
+attr title "coord X, vector"
+vector 3 MobileNetwork.host[1] coordY:vector ETV
+attr interpolationmode linear
+attr source yCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Y, vector"
+vector 4 MobileNetwork.host[2] coordX:vector ETV
+attr interpolationmode linear
+attr source xCoord(mobilityPos(mobilityStateChanged))
+attr title "coord X, vector"
+vector 5 MobileNetwork.host[2] coordY:vector ETV
+attr interpolationmode linear
+attr source yCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Y, vector"
+vector 6 MobileNetwork.host[3] coordX:vector ETV
+attr interpolationmode linear
+attr source xCoord(mobilityPos(mobilityStateChanged))
+attr title "coord X, vector"
+vector 7 MobileNetwork.host[3] coordY:vector ETV
+attr interpolationmode linear
+attr source yCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Y, vector"
+vector 8 MobileNetwork.host[4] coordX:vector ETV
+attr interpolationmode linear
+attr source xCoord(mobilityPos(mobilityStateChanged))
+attr title "coord X, vector"
+vector 9 MobileNetwork.host[4] coordY:vector ETV
+attr interpolationmode linear
+attr source yCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Y, vector"
+0	2640 3376 0 448 0 8.957268644803 91 276.88761767931 475.03502005711 42074.2647876 19590763.968258
+1	6016 3377 0 448 0 8.957268644803 91 208.19099219516 324.86749058589 28877.78658927 9212353.4079012
+2	9393 2994 0 451 0 9.021360614334 92 340.82673825324 506.55944645405 34854.4853008 13462884.514721
+3	12387 2996 0 451 0 9.021360614334 92 157.11391726509 241.10534815118 16227.442146091 2928584.337222
+4	15383 2422 0 449 0 8.970312875649 91 42.621635226533 326.92990642972 16630.574055879 3682894.4370891
+5	17805 2424 0 449 0 8.970312875649 91 134.9584646523 338.90069490299 21428.588314199 5377151.5522486
+6	20229 2550 0 450 0 8.973029914751 91 12.131039472297 374.13821783848 15354.849963619 3820452.5138191
+7	22779 2553 0 450 0 8.973029914751 91 147.29661494493 258.35764603689 17776.066770583 3588129.5252591
+8	25332 2943 0 452 0 9.037388538616 92 262.55232598633 466.89405413345 38113.506417923 16201336.960329
+9	28275 2939 0 452 0 9.037388538616 92 56.140310969204 119.01384210214 6654.3490306343 520292.17574978
+

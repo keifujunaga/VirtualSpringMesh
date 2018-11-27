@@ -1,0 +1,34 @@
+file 980 1534918135                                             
+version 2
+run RandomWPMobility-0-20180822-15:08:43-9080
+attr configname RandomWPMobility
+attr datetime 20180822-15:08:43
+attr experiment RandomWPMobility
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network MobileNetwork
+attr processid 9080
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.numHosts 5
+param **.host*.mobilityType "\"RandomWPMobility\""
+param **.host*.mobility.initFromDisplayString false
+param **.host[0].mobility.speed 10*uniform(20mps,50mps)
+param **.host*.mobility.speed uniform(20mps,50mps)
+param **.host*.mobility.waitTime uniform(3s,8s)
+param *.numHosts 2
+param **.constraintAreaMinX 0m
+param **.constraintAreaMinY 0m
+param **.constraintAreaMinZ 0m
+param **.constraintAreaMaxX 600m
+param **.constraintAreaMaxY 400m
+param **.constraintAreaMaxZ 0m
+param **.updateInterval 0.1s
+param **.mobility.initFromDisplayString false
+
+

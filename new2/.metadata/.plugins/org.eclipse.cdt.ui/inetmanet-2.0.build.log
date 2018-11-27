@@ -1,0 +1,16 @@
+17:20:14 **** Build of configuration gcc-release for project inetmanet-2.0 ****
+make MODE=release all 
+cd src && /usr/bin/make
+make[1]: Entering directory '/c/Users/Public/Documents/omnetpp-5.3/new2/inetmanet-2.0/src'
+applications/AppBase.cc
+In file included from applications/AppBase.cc:20:
+applications/AppBase.h:23:10: fatal error: 'INETDefs.h' file not found
+#include "INETDefs.h"
+         ^~~~~~~~~~~~
+1 error generated.
+make[1]: *** [Makefile:859: ../out/clang-release/src/applications/AppBase.o] Error 1
+make[1]: Leaving directory '/c/Users/Public/Documents/omnetpp-5.3/new2/inetmanet-2.0/src'
+make: *** [Makefile:2: all] Error 2
+
+17:20:25 Build Finished (took 11s.240ms)
+
